@@ -212,23 +212,37 @@ footer {
     font-size: 28px;
   }
 
-  .lcu-section {
-    flex-direction: column;
-    gap: 30px;
-  }
-
-  .insta,
-  .mail {
-    width: 60px;
-    margin: 0 20px;
-  }
-
   .videos-container {
     gap: 40px;
   }
 }
 
-/* MOBILE ≤ 600px */
+/* MOBILE ≤ 700px — LCU FIX */
+@media (max-width: 700px) {
+
+  .lcu-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 25px;
+  }
+
+  /* texte en premier */
+  .lcu-text {
+    order: 1;
+  }
+
+  /* icônes côte à côte */
+  .icon {
+    display: inline-block;
+    margin: 0 15px;
+    order: 2;
+  }
+
+  .insta { width: 55px; }
+  .mail  { width: 65px; }
+}
+
+/* MOBILE ≤ 600px — BOUTON FIX */
 @media (max-width: 600px) {
 
   .header-content {
@@ -264,39 +278,26 @@ footer {
     margin: 40px auto 0 auto;
   }
 
-  /* === BOUTON MOBILE FIX === */
+  /* BOUTON 100% FIXÉ */
   .btn-reserver {
     position: static !important;
     transform: none !important;
     transform-origin: center !important;
-
     font-size: 16px;
     padding: 12px 20px;
-
     display: block;
     margin: 20px auto 0 auto;
-
     width: 100%;
     max-width: 200px;
     text-align: center;
-
-    transition: none !important; /* empêche tout mouvement */
+    transition: none !important;
   }
 
-  /* SUPPRESSION COMPLETE des effets */
   .btn-reserver:hover,
   .btn-reserver:active,
   .btn-reserver:focus {
     transform: none !important;
     box-shadow: none !important;
-  }
-
-  .insta {
-    width: 55px;
-  }
-
-  .mail {
-    width: 65px;
   }
 }
 
