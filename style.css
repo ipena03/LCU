@@ -135,11 +135,12 @@ img {
   align-items: center;
   justify-content: center;
   gap: 70px;
+  flex-wrap: nowrap;
   text-align: center;
 }
 
-.lcu-left,
-.lcu-right {
+/* 🔥 Forces Insta et Mail à rester alignés correctement */
+.lcu-section > a {
   display: flex;
   align-items: center;
 }
@@ -165,6 +166,7 @@ img {
 .lcu-text {
   max-width: 650px;
   line-height: 1.6;
+  text-align: center;
 }
 
 .lcu-text h3 {
@@ -241,7 +243,7 @@ footer {
     max-width: 140px;
   }
 
-  /* LCU MOBILE */
+  /* LCU FIX */
   .lcu-section {
     flex-direction: column;
     gap: 20px;
@@ -251,16 +253,16 @@ footer {
     order: 1;
   }
 
-  .lcu-left,
-  .lcu-right {
+  /* 🔥 Insta + Mail côte à côte */
+  .lcu-section > a {
     order: 2;
     display: inline-block;
+    margin: 0 15px;
   }
 
   .insta,
   .mail {
     width: 60px;
-    margin: 0 15px;
   }
 }
 
@@ -290,6 +292,7 @@ footer {
     margin: 40px auto 0 auto;
   }
 
+  /* BOUTON 100% FIXÉ */
   .btn-reserver {
     position: static !important;
     transform: none !important;
@@ -299,6 +302,11 @@ footer {
     margin: 20px auto 0 auto;
     width: 100%;
     max-width: 200px;
+  }
+
+  .btn-reserver:hover {
+    box-shadow: none !important;
+    transform: none !important;
   }
 }
 
