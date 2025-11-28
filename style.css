@@ -268,15 +268,23 @@ footer {
   .btn-reserver {
     position: static !important;
     transform: none !important;
+    transform-origin: center !important;
+
     font-size: 16px;
     padding: 12px 20px;
+
     display: block;
     margin: 20px auto 0 auto;
+
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
   }
 
   /* empêche décalage après clic */
   .btn-reserver:hover {
     transform: scale(1.07) !important;
+    transform-origin: center !important;
   }
 
   .insta {
