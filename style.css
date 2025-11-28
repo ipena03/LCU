@@ -217,30 +217,36 @@ footer {
   }
 }
 
-/* MOBILE ≤ 700px — LCU FIX */
+/* MOBILE LCU FIX — fonctionne même sans modifier le HTML */
 @media (max-width: 700px) {
 
+  /* Le conteneur devient vertical */
   .lcu-section {
     flex-direction: column;
     text-align: center;
-    gap: 25px;
+    gap: 20px;
   }
 
-  /* texte en premier */
+  /* Le texte passe en premier */
   .lcu-text {
     order: 1;
   }
 
-  /* icônes côte à côte */
-  .icon {
-    display: inline-block;
-    margin: 0 15px;
-    order: 2;
+  /* Les icônes passent après */
+  .insta,
+  .mail {
+    order: 2;               /* mêmes positions */
+    display: inline-block;  /* permet de les aligner horizontalement */
+    margin: 0 15px;         /* espace entre eux */
+    vertical-align: middle; /* empêche la ligne de casser */
   }
 
-  .insta { width: 55px; }
-  .mail  { width: 65px; }
+  /* IMPORTANT : empêche le centrage vertical de casser la ligne */
+  .icon {
+    width: auto;
+  }
 }
+
 
 /* MOBILE ≤ 600px — BOUTON FIX */
 @media (max-width: 600px) {
@@ -341,3 +347,4 @@ footer {
     max-width: 140px;
   }
 }
+
