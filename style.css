@@ -192,7 +192,7 @@ footer {
 /* RESPONSIVE */
 /* -------------------- */
 
-/* TABLETTE + MOBILE ≤ 900px */
+/* TABLETTE ≤ 900px */
 @media (max-width: 900px) {
 
   .title {
@@ -217,38 +217,47 @@ footer {
   }
 }
 
-/* MOBILE LCU FIX — fonctionne même sans modifier le HTML */
+/* MOBILE ≤ 700px */
 @media (max-width: 700px) {
 
-  /* Le conteneur devient vertical */
+  /* HEADER FIX */
+  .header-content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .title {
+    position: static;
+    transform: none;
+    font-size: 18px;
+  }
+
+  .logo {
+    max-width: 140px;
+  }
+
+  /* LCU FIX : icons côte à côte */
   .lcu-section {
     flex-direction: column;
-    text-align: center;
     gap: 20px;
   }
 
-  /* Le texte passe en premier */
   .lcu-text {
     order: 1;
   }
 
-  /* Les icônes passent après */
   .insta,
   .mail {
-    order: 2;               /* mêmes positions */
-    display: inline-block;  /* permet de les aligner horizontalement */
-    margin: 0 15px;         /* espace entre eux */
-    vertical-align: middle; /* empêche la ligne de casser */
-  }
-
-  /* IMPORTANT : empêche le centrage vertical de casser la ligne */
-  .icon {
-    width: auto;
+    order: 2;
+    display: inline-block;
+    margin: 0 15px;
+    vertical-align: middle;
+    width: 60px;
   }
 }
 
-
-/* MOBILE ≤ 600px — BOUTON FIX */
+/* MOBILE ≤ 600px */
 @media (max-width: 600px) {
 
   .header-content {
@@ -260,18 +269,8 @@ footer {
   }
 
   .title {
-    position: static;
-    transform: none;
     font-size: 18px;
     margin-top: 10px;
-  }
-
-  .event-title {
-    font-size: 24px;
-  }
-
-  .event-description {
-    font-size: 16px;
   }
 
   .videos-container {
@@ -288,22 +287,17 @@ footer {
   .btn-reserver {
     position: static !important;
     transform: none !important;
-    transform-origin: center !important;
     font-size: 16px;
     padding: 12px 20px;
     display: block;
     margin: 20px auto 0 auto;
     width: 100%;
     max-width: 200px;
-    text-align: center;
-    transition: none !important;
   }
 
-  .btn-reserver:hover,
-  .btn-reserver:active,
-  .btn-reserver:focus {
-    transform: none !important;
+  .btn-reserver:hover {
     box-shadow: none !important;
+    transform: none !important;
   }
 }
 
@@ -327,24 +321,3 @@ footer {
     width: 50px;
   }
 }
-
-/* TITRE QUI NE SE CHEVAUCHE PAS SUR PETITS ÉCRANS */
-@media (max-width: 700px) {
-
-  .header-content {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .title {
-    position: static;
-    transform: none;
-    font-size: 18px;
-  }
-
-  .logo {
-    max-width: 140px;
-  }
-}
-
