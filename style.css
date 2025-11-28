@@ -264,7 +264,7 @@ footer {
     margin: 40px auto 0 auto;
   }
 
-  /* BOUTON FIX — version mobile */
+  /* === BOUTON MOBILE FIX === */
   .btn-reserver {
     position: static !important;
     transform: none !important;
@@ -279,12 +279,16 @@ footer {
     width: 100%;
     max-width: 200px;
     text-align: center;
+
+    transition: none !important; /* empêche tout mouvement */
   }
 
-  /* empêche décalage après clic */
-  .btn-reserver:hover {
-    transform: scale(1.07) !important;
-    transform-origin: center !important;
+  /* SUPPRESSION COMPLETE des effets */
+  .btn-reserver:hover,
+  .btn-reserver:active,
+  .btn-reserver:focus {
+    transform: none !important;
+    box-shadow: none !important;
   }
 
   .insta {
