@@ -104,22 +104,7 @@ img {
 }
 
 .btn-reserver {
-
-
-
-
-  border-radius: 12px;
-  font-size: 20px;
-  padding: 16px 28px;
-  font-weight: 800;
-  letter-spacing: 0.5px;
-  box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
-  transition: 0.25s ease-in-out;
-  border: 2px solid rgba(255, 255, 255, 0.15);
-
-
   position: absolute;
-
   left: 50%;
   transform: translateX(-50%);
   padding: 14px 25px;
@@ -129,6 +114,8 @@ img {
   text-decoration: none;
   font-size: 18px;
   font-weight: bold;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
   transition: 0.3s ease;
 }
 
@@ -148,7 +135,7 @@ img {
   align-items: center;
   justify-content: center;
   gap: 70px;
-  flex-wrap: nowrap; /* GARDE LES ÉLÉMENTS SUR UNE SEULE LIGNE EN VERSION PC */
+  flex-wrap: nowrap;
   text-align: center;
 }
 
@@ -208,7 +195,6 @@ footer {
 /* TABLETTE + MOBILE ≤ 900px */
 @media (max-width: 900px) {
 
-  /* Header */
   .title {
     font-size: 20px;
     width: 90%;
@@ -226,18 +212,15 @@ footer {
     font-size: 28px;
   }
 
-  /* LCU : Passe en colonne */
   .lcu-section {
     flex-direction: column;
     gap: 30px;
   }
 
-  /* Texte en premier */
   .lcu-text {
     order: 1;
   }
 
-  /* Icônes en dessous, côte à côte */
   .lcu-section > a {
     order: 2;
     display: inline-block;
@@ -247,6 +230,10 @@ footer {
   .mail {
     width: 60px;
     margin: 0 20px;
+  }
+
+  .videos-container {
+    gap: 40px;
   }
 }
 
@@ -283,10 +270,18 @@ footer {
 
   .place {
     max-width: 350px;
+    margin: 0 auto;
+    margin-top: 40px;   /* bouton descend correctement */
   }
 
+  /* BOUTON DEVient NORMAL en mobile */
   .btn-reserver {
+    position: static;
+    transform: none;
     font-size: 16px;
+    padding: 12px 20px;
+    display: block;
+    margin: 20px auto 0 auto;
   }
 
   .insta {
@@ -311,6 +306,10 @@ footer {
 
   .logo {
     max-width: 95px;
+  }
+
+  .place {
+    margin-top: 70px;
   }
 
   .insta,
@@ -338,54 +337,3 @@ footer {
     max-width: 140px;
   }
 }
-
-/* FIX RESA MOBILE */
-@media (max-width: 600px) {
-
-  .place {
-    max-width: 320px !important;
-    margin: auto;
-  }
-
-  .btn-reserver {
-    bottom: 5px;
-    font-size: 15px;
-    padding: 10px 18px;
-  }
-}
-
-
-/* Corrige la hauteur du bloc "place" en version mobile */
-@media (max-width: 600px) {
-  .place {
-    margin-top: 60px !important; /* au lieu de 190px */
-  }
-}
-
-/* Encore mieux sur très petits écrans */
-@media (max-width: 400px) {
-  .place {
-    margin-top: 200px !important;
-  }
-}
-
-
-/* Gap réduit pour tablettes et mobiles */
-@media (max-width: 900px) {
-  .videos-container {
-    gap: 40px; /* espace réduit pour tablettes */
-  }
-}
-
-@media (max-width: 600px) {
-  .videos-container {
-    gap: 25px; /* espace réduit pour mobiles */
-  }
-
-  .place {
-    margin-top: 0; /* supprime le gros margin-top sur mobile */
-  }
-}
-
-
-
